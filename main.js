@@ -1,5 +1,5 @@
 function DataTable(config, data) {
-   … // содержимое этой функции вам и нужно написать :)
+   // … // содержимое этой функции вам и нужно написать :)
    	let parent = document.getElementById('usersTable');
    	let table = document.createElement('table');
    	for (let i = 0; i < 4; i++) {
