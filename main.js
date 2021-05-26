@@ -7,11 +7,12 @@ function DataTable(config, data) {
 	  	let tr = document.createElement('tr');
 	  	for (let j = 0; j < 4; j++) {
 		  	let td = document.createElement('td');
+        td.style.border = '1px solid black';
 		  	if (j == 0 && i == 0) {
       		td.innerHTML = '№';
       		}
-      	else {td.innerHTML = config1.columns[j].title;}
-      		
+      	if(j != 0 && i == 0) {td.innerHTML = config1.columns[0].title;}
+      	console.log(j);
       		
       		
       		
