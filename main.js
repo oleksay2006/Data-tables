@@ -1,17 +1,32 @@
 function DataTable(config, data) {
    // … // содержимое этой функции вам и нужно написать :)
-   	let parent = document.getElementById('usersTable');
+   	let parent = document.getElementById(Object.keys(config1));
    	let table = document.createElement('table');
-   	for (let i = 0; i < 4; i++) {
+   	table.style.border = '1px solid black';
+   	for (let i = 0; i < data.length + 1; i++) {
 	  	let tr = document.createElement('tr');
 	  	for (let j = 0; j < 4; j++) {
 		  	let td = document.createElement('td');
-      		tr.appendChild(td);
+		  	if (j == 0 && i == 0) {
+      		td.innerHTML = '№';
+      		}
+      		if (j == 1 && i == 0) {
+      		td.innerHTML = 'Имя';
+      		}
+      		if (j == 2 && i == 0) {
+      		td.innerHTML = 'Фамилия';
+      		}
+      		if (j == 3 && i == 0) {
+      		td.innerHTML = 'Возраст';
+      		}
+		  	tr.appendChild(td);
 		}
 		table.appendChild(tr);
     //div.innerHTML = table;
 	}
-	parent.appendChild(table);
+	// parent.appendChild(table);
+  Object.entries(config).map(([key, value]) => [key, value])
+	console.log(config1);
 }
 
 const config1 = {
