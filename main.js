@@ -3,24 +3,28 @@ function DataTable(config, data) {
    	let parent = document.querySelector(config1.parent);
    	let table = document.createElement('table');
    	table.style.border = '1px solid black';
+    let number = 0;
    	for (let i = 0; i < data.length + 1; i++) {
 	  	let tr = document.createElement('tr');
-	  	for (let j = 0; j < 4; j++) {
+
+	  	for (let j = 0; j < config.columns.length + 1; j++) {
 		  	let td = document.createElement('td');
         td.style.border = '1px solid black';
 		  	if (j == 0 && i == 0) {
       		td.innerHTML = '№';
       		}
-      	if(j != 0 && i == 0) {td.innerHTML = config.columns[j].title;}
+      	// if(j != 0 && i == 0) {td.innerHTML = config.columns[0].title;}
       	console.log(j);
-      		
-      		
+      	if (j == 0 && i != 0) {td.innerHTML = number}
+      	if (j != 0 && i != 0) {data.name}
       		
 		  	tr.appendChild(td);
-		}
-		table.appendChild(tr);
+        console.log(config.columns[j].title);
+		  }
+		  number++;
+      table.appendChild(tr);
     //div.innerHTML = table;
-	}
+	 }
 	parent.appendChild(table);
   Object.entries(config).map(([key, value]) => [key, value])
 	console.log(config1.columns[0].title);
