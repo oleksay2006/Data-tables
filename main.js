@@ -11,7 +11,7 @@ function DataTable(config, data) {
 		  	if (j == 0 && i == 0) {
       		td.innerHTML = '№';
       		}
-      	if(j != 0 && i == 0) {td.innerHTML = config1.columns[0].title;}
+      	if(j != 0 && i == 0) {td.innerHTML = config.columns[j].title;}
       	console.log(j);
       		
       		
