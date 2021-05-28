@@ -7,16 +7,20 @@ function DataTable(config, data) {
    	for (let i = 0; i < data.length + 1; i++) {
 	  	let tr = document.createElement('tr');
 
-	  	for (let j = 0; j < config.columns.length + 1; j++) {
+	  	for (let j = 0; j < config.columns.length; j++) {
 		  	let td = document.createElement('td');
         td.style.border = '1px solid black';
 		  	if (j == 0 && i == 0) {
       		td.innerHTML = '№';
       		}
-      	// if(j != 0 && i == 0) {td.innerHTML = config.columns[0].title;}
+      	if(j != 0 && i == 0) {td.innerHTML = config.columns[j-1].title;}
       	console.log(j);
       	if (j == 0 && i != 0) {td.innerHTML = number}
-      	if (j != 0 && i != 0) {data.name}
+      	if (j != 0 && i != 0) {
+          if (config.columns[j-1].value == data[j-1].name) {
+            td.innerHTML = data[j-1].name;
+          }
+        }
       		
 		  	tr.appendChild(td);
         console.log(config.columns[j].title);
